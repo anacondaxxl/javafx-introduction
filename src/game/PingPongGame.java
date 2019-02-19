@@ -16,19 +16,23 @@ public class PingPongGame {
 		playersPointsMap.put("Player1", 0);
 		playersPointsMap.put("Player2", 0);
 		playersPointsMap.put("Player3", 0);
+		playersPointsMap.put("Player4", 0);
 
 		String winnerMatch1 = playMatch("Player1", "Player2");
 		System.out.println("Winner match 1 is " + winnerMatch1);
 		playersPointsMap.put(winnerMatch1, playersPointsMap.get(winnerMatch1) + 1);
-		
-		
-		String winnerMatch2 = playMatch("Player1", "Player3");
+
+		String winnerMatch2 = playMatch("Player3", "Player4");
 		System.out.println("Winner match 2 is " + winnerMatch2);
 		playersPointsMap.put(winnerMatch2, playersPointsMap.get(winnerMatch2) + 1);
 		
-		String winnerMatch3 = playMatch("Player2", "Player3");
+		String winnerMatch3 = playMatch("Player3", "Player1");
 		System.out.println("Winner match 3 is " + winnerMatch3);
 		playersPointsMap.put(winnerMatch3, playersPointsMap.get(winnerMatch3) + 1);
+
+		String winnerMatch4 = playMatch("Player4", "Player2");
+		System.out.println("Winner match 4 is " + winnerMatch4);
+		playersPointsMap.put(winnerMatch4, playersPointsMap.get(winnerMatch4) + 1);
 		
 		for (String player : playersPointsMap.keySet()) {
 			System.out.println("Player: " + player + " points: " + playersPointsMap.get(player));
@@ -62,7 +66,7 @@ public class PingPongGame {
 				matchScore.set(1, scor2);
 			}
 
-			 Thread.sleep(3000 + (long)(7000 * Math.random()));
+			 Thread.sleep(150 + (long)(350 * Math.random()));
 		}
 
 		if (scor1 > scor2) {
